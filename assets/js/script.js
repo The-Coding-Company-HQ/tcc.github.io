@@ -5,31 +5,11 @@ function menuToggle(){
     section.classList.toggle('active');
 }
 
-TweenMax.from(".title", 1.5, {
-    delay: 0.1,
-    opacity: 0,
-    x: -20,
-    ease: Expo.easeInOut
-});
+let tl = gsap.timeline({Defaults: { Easing: Expo.EaseOut}});
 
-TweenMax.staggerFrom(".media ul li", 1, {
-    delay: 0.5,
-    opacity: 0,
-    y: 40,
-    ease: Expo.easeInOut
-}, 0.2);
-
-TweenMax.from(".contact", 1.4, {
-    delay: 1,
-    opacity: 0,
-    y: 40,
-    ease: Expo.easeInOut
-});
-
-TweenMax.from(".arrow-right", 1, {
-    delay: 0.8,
-    opacity: 0,
-    x: -40,
-    ease: Expo.easeInOut
-});
+tl.from('.bg', { scale: 0.6, duration: 1.2, opacity: 0, ease: Expo.easeOut, delay: 0.2})
+  .to('.text-reveal', { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', y:0, stagger: .3, duration: 1}, "-=2.9")
+//   .to('.text-reveal', { clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)', y: -200, duration: .2, delay: .5})
+  .to('.text-reveal', { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', stagger: .3, duration: .3, delay: .5})
+  .to('svg', { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'})
 

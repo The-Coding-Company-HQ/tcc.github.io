@@ -6,18 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>The Coding Company</title>
         <link rel="stylesheet" href="./assets/css/style.css" />
-        <script src="./assets/js/script.js" defer></script>
         <link href="https://fonts.googleapis.com/css?family=Charm:700" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <script src="./assets/js/script.js" defer></script>
     </head>
     <body>
         <section>
             <header>
                 <div class="toggle" onclick="menuToggle()"></div>
+                <div class="logo">The Coding Company</div>
             </header>
-            <!-- <img src="https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="background"> -->
-            <h1 class="title">THE &nbsp;<span>&lt;</span><span>CODING </span><span>/></span>&nbsp; COMPANY</h1>
+    
             <div class="glass"></div>
             <ul class = "navigation">
                 <li style = "--n:1"><a href = "#">About</a></li>
@@ -25,18 +26,29 @@
                 <li style = "--n:3"><a href = "#">Services</a></li>
                 <li style = "--n:4"><a href = "#">Contact</a></li>
             </ul>
-            <div class="media">
-                <ul>
-                    <li><i class="fa fa-facebook"></i></li>
-                    <li><i class="fa-brands fa-instagram"></i></li>
-                    <li><i class="fa fa-twitter"></i></li>
-                </ul>
-            </div>
-
-          <div class="arrow-right">
-                Est. 2022
-          </div>
         </section>
+
+        <div class="container">
+            <div class="content">
+                <div class="content-inner">
+                    <!-- <h1 class="text-reveal">The Coding Company</h1> -->
+                    <p class="text-reveal">We code cool stuff to help you achieve your vision.</p>
+                </div>
+    
+                <svg viewBox="0 0 24 122" fill="#000" xmlns="http://www.w3.org/2000/svg" class="hero-arrow">
+                    <path d="M10.9393 121.061C11.5251 121.646 12.4749 121.646 13.0607 121.061L22.6066 111.515C23.1924 110.929 23.1924 109.979 22.6066 109.393C22.0208 108.808 21.0711 108.808 20.4853 109.393L12 117.879L3.51471 109.393C2.92893 108.808 1.97918 108.808 1.39339 109.393C0.807607 109.979 0.807607 110.929 1.39339 111.515L10.9393 121.061ZM10.5 -6.55671e-08L10.5 120L13.5 120L13.5 6.55671e-08L10.5 -6.55671e-08Z" fill="black"/>
+                </svg>
+            </div>
+        </div>
+    
+        <div class="test"></div>
+        
         
     </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByClassName("logo")[0].style.color = "black";
+            document.getElementsByClassName("toggle")[0].style.opacity = 1;
+        })
+    </script>
 </html>

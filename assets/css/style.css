@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
     --background: #005;
@@ -14,9 +15,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
 }
-
 
 section {
     position: relative;
@@ -26,7 +28,7 @@ section {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    background: #fff;
 }
 
 header {
@@ -57,6 +59,24 @@ display: flex;
 justify-content: center;
 align-items: center;
 transition: 0.5s ease-in-out;
+opacity: 0;
+}
+
+header .logo {
+    position: absolute;
+    left: 9vmin;
+    top: 9vmin;
+    height: 60px;
+    cursor: pointer;
+    background-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    font-size: 2em;
+    font-family: "Bebas Neue";
+    color: white;
+    transition: 1s ease-in-out;
 }
 
 header .toggle:hover {
@@ -71,12 +91,19 @@ cursor: pointer;
 background-size: 2em;
 }
 
+section.active .logo{
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 1s ease-in-out;
+}
+
 .glass {
 position: fixed;
 top: 0;
 left: 0;
 width: 0%;
 height: 100%;
+background: #333;
 backdrop-filter: blur(15px);
 z-index: 10;
 transition: 1s ease-in-out;
@@ -145,157 +172,55 @@ section .navigation li a:hover:after{
     transition: 0.3s;
 }
 
-.title{
-    padding-bottom: 5vh;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 6vmax;
-    text-align: center;
-    color: #eee;
-    font-family: "Charm";
-}
 
-.title span{
-    white-space: nowrap;
-}
 
-.title span:nth-child(1){
-    color: rgb(37, 37, 37);
-}
 
-.title span:nth-child(2){
-    color: rgb(78, 78, 214);
-}
-.title span:nth-child(3){
-    color: rgb(36, 36, 36);
-}
-
-.media ul {
-    list-style: none;
-    position: absolute;
-    right: 20px;
-    top: 70%;
-    padding: 10px 10px;
-    color: white;
-}
-
-.media ul li {
-    font-size: 18px;
-    margin: 24px 0;
-}
-
-/* section img {
+  .hero-arrow {
+    width: 1em;
+    margin: 2em auto;
+    display: block;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    /* text-shadow: 0 5px 2px rgba(0, 0, 0, 0.5); */
+  }
+  
+  .container {
     position: absolute;
     top: 0;
-    left: 0;
+    height: 100vh;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: #161623;
-    filter: blur(2px);
-} */
-
-.title:after {
-    content: "";
-    top: 0%;
-    left: 0;
-    width: 0%;
-    height: 80%;
-    background: #eee;
-    position: absolute;
-    animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    /* animation-delay: 1.4s; */
-}
-
-.arrow-right {
-    position: absolute;
-    top: 686px;
-    left: 122px;
-    padding: 10px 30px;
-    font-size: 2vmax;
-    font-weight: bold;
-}
-
-@keyframes rev-block {
-    0% {
-        left: 0%;
-        width: 0%;
-    }
-
-    50% {
-        left: 0;
-        width: 100%;
-    }
-
-    100% {
-        left: 100%;
-        width: 0%;
-    }
-}
-
-@keyframes appear-text {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.button1 {
-    padding: 1.3em 3em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-  }
-  
-.button1:hover {
-    background-color: #23c483;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-  }
-  
-.button1:active {
-    transform: translateY(-1px);
+    display: grid;
+    place-content: center;
   }
 
+  .test{
+    background: blue;
+    height: 100vh;
+  }
   
-
-  footer {
+  .content {
+    color: black;
     text-align: center;
-    padding: 1em;
-    max-width: 80px;
-    position: absolute;
-    bottom: 90px;
-    right: 1px;
+    padding: 10px;
   }
-  footer a {
-    text-decoration: none;
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px dashed #fff;
-    color: #fff;
-    margin: 5px;
+  .content h1 {
+    font-size: 8vmax;
+    margin-bottom: 0;
+    font-family: 'Bebas Neue';
+    font-weight: normal;
+    /* text-shadow: 0 5px 2px rgba(0, 0, 0, 0.5); */
   }
-  footer a:hover {
-    background: rgba(255, 255, 255, 0.1);
+  .content p {
+    padding-top: 5vh;
+    font-size: 3.5vmax;
+    font-family: "Inter";
+    font-weight: 600;
+    /* text-shadow: 0 5px 2px rgba(0, 0, 0, 0.5); */
+    padding-bottom: 10px;
   }
-  footer a .icons {
-    margin-top: 12px;
-    display: inline-block;
-    font-size: 20px;
+
+  .content .text-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all 1.5s;
+    transform: translateY(-3em);
+    color: black;
   }
